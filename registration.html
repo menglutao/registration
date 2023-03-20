@@ -1,0 +1,38 @@
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <span class="navbar-brand-text">Registration</span>
+    </div>
+  </nav>
+  
+  <div class = "container">
+    <form method="post">
+      <div class="form-group left">
+        <div class="input-wrapper">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+       </div>
+    <div class="form-group right">
+      <div class="input-wrapper">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>    
+     </div> 
+      <div class="criteria-checklist">
+      <ul>
+        <li id="length">8+ characters</li>
+        <li id="lowercase">lowercase letter</li>
+        <li id="uppercase">uppercase letter</li>
+        <li id="decimal">number</li>
+        <li id="special">special character</li>
+      </ul>
+    </div>
+   </div>
+       <div class="submit-container right">
+      <button id="sign-up" name="singlebutton" type='submit' class="submit-btn" disabled="disabled">Submit</button>
+  </div>
+     
+    </form>
+  </div>
+  
+</body>
