@@ -2,22 +2,28 @@ body {
   margin: 0;
   font-family: Verdana;
 }
+
 .navbar {
   height: 80px;
   width:100vw;
   background-color: black;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-brand {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+
 }
 
 .navbar-brand-text {
   font-family: Verdana;
   font-size:35px;
   color: white;
-  margin-top: 15px;
+  margin-top: 10px;
+
 }
 
 .container {
@@ -29,7 +35,7 @@ body {
 	max-width: 600px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   
 }
 
@@ -40,27 +46,9 @@ body {
 }
 
 .input-wrapper input {
-  width: 17rem;
+  width: 16rem;
   height:2rem;
   border: 1px solid black;
-  
-}
-
-.left{
-  width:50%; 
-  float:left; 
-  margin-right: 10px;
-}
-
-.right{
-  width:600px;
-}
-
-.criteria-checklist {
-  margin-top: 5px;
-  float:right;
-  margin-right: 120px;
-  margin-bottom:20px;
 }
 
 .criteria-checklist ul {
@@ -84,11 +72,9 @@ body {
 
 
 .submit-container {
-  display: flex;
   justify-content: flex-end;
-  align-items: center;
   margin-top: 40px;
-  margin-right:25px;
+
 }
 
 .submit-btn {
@@ -99,8 +85,8 @@ body {
   padding: 10px;
   font-size: 16px;
   width: 100%;
-  max-width: 17.5rem;
   cursor: pointer;
+  width: 17rem;
 }
 
 
