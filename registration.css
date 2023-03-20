@@ -4,6 +4,7 @@ body {
 }
 .navbar {
   height: 80px;
+  width:100vw;
   background-color: black;
 }
 
@@ -69,13 +70,15 @@ body {
 
 
 .criteria-checklist li:before {
-  content: "x ";
+  content: "x";
   color: #DF2E38;
+  font-family: Arial, sans-serif; 
 }
 
 .criteria-checklist .valid:before {
-  content: "✓ ";
+  content: "\2713"; 
   color: #5D9C59;
+
 }
 
 

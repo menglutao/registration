@@ -1,38 +1,50 @@
-<body>
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <span class="navbar-brand-text">Registration</span>
-    </div>
-  </nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>A Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+  </head>
   
-  <div class = "container">
-    <form method="post">
-      <div class="form-group left">
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <span class="navbar-brand-text">Registration</span>
+      </div>
+    </nav>
+    
+    <div class = "container">
+      <form method="post">
+        <div class="form-group left">
+          <div class="input-wrapper">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+         </div>
+      <div class="form-group right">
         <div class="input-wrapper">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-       </div>
-    <div class="form-group right">
-      <div class="input-wrapper">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>    
-     </div> 
-      <div class="criteria-checklist">
-      <ul>
-        <li id="length">8+ characters</li>
-        <li id="lowercase">lowercase letter</li>
-        <li id="uppercase">uppercase letter</li>
-        <li id="decimal">number</li>
-        <li id="special">special character</li>
-      </ul>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>    
+       </div> 
+        <div class="criteria-checklist">
+        <ul>
+          <li id="length">8+ characters</li>
+          <li id="lowercase">lowercase letter</li>
+          <li id="uppercase">uppercase letter</li>
+          <li id="decimal">number</li>
+          <li id="special">special character</li>
+        </ul>
+      </div>
+     </div>
+         <div class="submit-container right">
+        <button id="sign-up" name="singlebutton" type='submit' class="submit-btn" disabled="disabled">Submit</button>
     </div>
-   </div>
-       <div class="submit-container right">
-      <button id="sign-up" name="singlebutton" type='submit' class="submit-btn" disabled="disabled">Submit</button>
-  </div>
-     
-    </form>
-  </div>
-  
-</body>
+       
+      </form>
+    </div>
+    <script src="registration.js"></script>
+  </body>
+
+</html>
