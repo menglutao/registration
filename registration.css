@@ -57,10 +57,9 @@ body {
   padding: 0;
 }
 
-
 .criteria-checklist li:before {
-  content: "x";
-  color: #DF2E38;
+  content: "\1F436";
+  /* color: #DF2E38; */
   font-family: Arial, sans-serif; 
 }
 
