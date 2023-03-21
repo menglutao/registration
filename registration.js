@@ -84,25 +84,28 @@ function updatePasswordStrengthUI(passwordResult) {
   }
 }
 
-$(document).ready(function () {
-  $("#email").blur(function () {
-    var email = $("#email").val();
-    if (IsEmail(email) == false) {
-      $("#sign-up").attr("disabled", true);
-    } else {
-      $("#sign-up").attr("disabled", false);
-    }
-  });
-  $("#password").keyup(function () {
-    var password = $("#password").val();
-    console.log(password);
-    const passwordResult = checkPassword(password);
-    const strength = calculateStrength(passwordResult);
-    updatePasswordStrengthUI(passwordResult);
-    if (checkStrength(strength) == false) {
-      $("#sign-up").attr("disabled", true);
-    } else {
-      $("#sign-up").attr("disabled", false);
-    }
-  });
-});
+// $(document).ready(function () {
+//   $("#email").blur(function () {
+//     var email = $("#email").val();
+//     if (IsEmail(email) == false) {
+//       $("#sign-up").attr("disabled", true);
+//     } else {
+//       $("#sign-up").attr("disabled", false);
+//     }
+//   });
+//   $("#password").keyup(function () {
+//     var password = $("#password").val();
+//     console.log(password);
+//     const passwordResult = checkPassword(password);
+//     const strength = calculateStrength(passwordResult);
+//     updatePasswordStrengthUI(passwordResult);
+//     if (checkStrength(strength) == false) {
+//       $("#sign-up").attr("disabled", true);
+//     } else {
+//       $("#sign-up").attr("disabled", false);
+//     }
+//   });
+// });
+
+// For testing
+module.exports = {IsEmail, checkPassword, calculateStrength, checkStrength, updatePasswordStrengthUI};
