@@ -9,128 +9,79 @@ function IsEmail(email) {
   return regex.test(email);
 }
 
-// function checkStrength(password) {
-//   var strength = 0;
-//   // if 8+ characters
-
-//   if (password.length > 7) {
-//     strength += 1;
-//     $("#length").addClass("valid");
-//   } else {
-//     $("#length").removeClass("valid");
-//   }
-
-//   //If password contains  lower characters, increase strength value.
-//   if (password.match(/[a-z]+/)) {
-//     strength += 1;
-//     $("#lowercase").addClass("valid");
-//   } else {
-//     $("#lowercase").removeClass("valid");
-//   }
-
-//   //If password contains upper characters, increase strength value.
-//   if (password.match(/[A-Z]+/)) {
-//     strength += 1;
-//     $("#uppercase").addClass("valid");
-//   } else {
-//     $("#uppercase").removeClass("valid");
-//   }
-
-//   //If it has numbers increase strength value.
-//   if (password.match(/([0-9])/)) {
-//     strength += 1;
-//     $("#decimal").addClass("valid");
-//   } else {
-//     $("#decimal").removeClass("valid");
-//   }
-
-//   //If it has one special character, increase strength value.
-//   if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
-//     strength += 1;
-//     $("#special").addClass("valid");
-//   } else {
-//     $("#special").removeClass("valid");
-//   }
-//   console.log(strength);
-
-//   if (strength > 4) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
-
 // Check password if contains certain characters or not and return the result
-function checkPassword(password){
-    let strength = 0;
-    const length = password.length;
-    const hasLowerCase = /[a-z]+/.test(password);
-    const hasUpperCase = /[A-Z]+/.test(password);
-    const hasNumber = /([0-9])+/.test(password);
-    const hasSpecialChar = /([!,%,&,@,#,$,^,*,?,_,~])+/.test(password)
-    // console.log(length, hasLowerCase, hasUpperCase, hasNumber, hasSpecialChar)
-    const passwordResult = {length, hasLowerCase, hasUpperCase, hasNumber, hasSpecialChar}
-    return passwordResult;
+function checkPassword(password) {
+  let strength = 0;
+  const length = password.length;
+  const hasLowerCase = /[a-z]+/.test(password);
+  const hasUpperCase = /[A-Z]+/.test(password);
+  const hasNumber = /([0-9])+/.test(password);
+  const hasSpecialChar = /([!,%,&,@,#,$,^,*,?,_,~])+/.test(password);
+  // console.log(length, hasLowerCase, hasUpperCase, hasNumber, hasSpecialChar)
+  const passwordResult = {
+    length,
+    hasLowerCase,
+    hasUpperCase,
+    hasNumber,
+    hasSpecialChar,
+  };
+  return passwordResult;
 }
 
 // Calculate the strength of the password
-function calculateStrength(passwordResult){
-
-    let strength = 0;
-    if(passwordResult.length > 7){
-        strength += 1;
-    }
-    if(passwordResult.hasLowerCase){
-        strength += 1;
-    }
-    if(passwordResult.hasUpperCase){
-        strength += 1;
-    }
-    if(passwordResult.hasNumber){
-        strength += 1;
-    }
-    if(passwordResult.hasSpecialChar){
-        strength += 1;
-    }
-    return strength;
+function calculateStrength(passwordResult) {
+  let strength = 0;
+  if (passwordResult.length > 7) {
+    strength += 1;
+  }
+  if (passwordResult.hasLowerCase) {
+    strength += 1;
+  }
+  if (passwordResult.hasUpperCase) {
+    strength += 1;
+  }
+  if (passwordResult.hasNumber) {
+    strength += 1;
+  }
+  if (passwordResult.hasSpecialChar) {
+    strength += 1;
+  }
+  return strength;
 }
 
 // Check the strength of the password
-function checkStrength(passwordResult){
-    const strength = calculateStrength(passwordResult);
-    return strength > 4;
+function checkStrength(strength) {
+  return strength > 4;
 }
 
 // Update the UI of the password strength
-function updatePasswordStrengthUI(passwordResult){
+function updatePasswordStrengthUI(passwordResult) {
+  if (passwordResult.length > 7) {
+    $("#length").addClass("valid");
+  } else {
+    $("#length").removeClass("valid");
+  }
+  if (passwordResult.hasLowerCase) {
+    $("#lowercase").addClass("valid");
+  } else {
+    $("#lowercase").removeClass("valid");
+  }
+  if (passwordResult.hasUpperCase) {
+    $("#uppercase").addClass("valid");
+  } else {
+    $("#uppercase").removeClass("valid");
+  }
+  if (passwordResult.hasNumber) {
+    $("#decimal").addClass("valid");
+  } else {
+    $("#decimal").removeClass("valid");
+  }
 
-    if(passwordResult.length > 7){
-        $("#length").addClass("valid");
-    }else{
-        $("#length").removeClass("valid");
-    }
-    if(passwordResult.hasLowerCase){
-        $("#lowercase").addClass("valid");
-    }else{
-        $("#lowercase").removeClass("valid");
-    }
-    if(passwordResult.hasUpperCase){
-        $("#uppercase").addClass("valid");
-    }else{
-        $("#uppercase").removeClass("valid");
-    }
-    if(passwordResult.hasNumber){
-        $("#decimal").addClass("valid");
-    }else{
-        $("#decimal").removeClass("valid");
-    }
-
-    if(passwordResult.hasSpecialChar){
-        $("#special").addClass("valid");
-    }else{
-        $("#special").removeClass("valid");
-    }
-
+  if (passwordResult.hasSpecialChar) {
+    $("#special").addClass("valid");
+  } else {
+    $("#special").removeClass("valid");
+  }
 }
 
 $(document).ready(function () {
@@ -146,8 +97,9 @@ $(document).ready(function () {
     var password = $("#password").val();
     console.log(password);
     const passwordResult = checkPassword(password);
+    const strength = calculateStrength(passwordResult);
     updatePasswordStrengthUI(passwordResult);
-    if (checkStrength(passwordResult) == false) {
+    if (checkStrength(strength) == false) {
       $("#sign-up").attr("disabled", true);
     } else {
       $("#sign-up").attr("disabled", false);

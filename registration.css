@@ -5,7 +5,7 @@ body {
 
 .navbar {
   height: 80px;
-  width:100vw;
+  width: 100vw;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -15,28 +15,23 @@ body {
   display: flex;
   align-items: center;
   margin-top: -10px;
-
 }
 
 .navbar-brand-text {
   font-family: Verdana;
-  font-size:35px;
+  font-size: 35px;
   color: white;
   margin-top: 10px;
-
 }
 
-.container {
-	background-color: white;
-	border: 1px solid black;
-	padding: 20px;
-	margin: 180px auto;
-  
-	max-width: 600px;
+.container-border {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 180px auto;
+  max-width: 600px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
 }
 
 .input-wrapper {
@@ -46,8 +41,8 @@ body {
 }
 
 .input-wrapper input {
-  width: 16rem;
-  height:2rem;
+  width: 14rem;
+  height: 2rem;
   border: 1px solid black;
 }
 
@@ -60,20 +55,17 @@ body {
 .criteria-checklist li:before {
   content: "\1F436";
   /* color: #DF2E38; */
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
 }
 
 .criteria-checklist .valid:before {
-  content: "\2713"; 
-  color: #5D9C59;
-
+  content: "\2713";
+  color: #5d9c59;
 }
-
 
 .submit-container {
   justify-content: flex-end;
   margin-top: 40px;
-
 }
 
 .submit-btn {
@@ -85,8 +77,5 @@ body {
   font-size: 16px;
   width: 100%;
   cursor: pointer;
-  width: 17rem;
+  width: 14rem;
 }
-
-
-
